@@ -30,7 +30,7 @@ async def me(inter: disnake.CommandInteraction) -> None:
         assert operator_data
         skill = troop_data.skills[operator.skill_index]
         skill_level = f"m{skill.specialize_level}" if skill.specialize_level > 0 else f"l{troop_data.main_skill_lvl}"
-        operators.append(f"- {operator_data.name} e{troop_data.evolve_phase}l{troop_data.level} s{operator.skill_index}l{skill_level}")
+        operators.append(f"- {operator_data.name} e{troop_data.evolve_phase}{troop_data.level} s{operator.skill_index}l{skill_level}")
     operators = "\n".join(operators)
     await inter.send(f"{data.status.nickname} lvl{data.status.level}\nSupport operators:\n{operators}")
 
